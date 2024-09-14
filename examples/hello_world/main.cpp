@@ -44,8 +44,7 @@ Component<Greeter> getGreeterComponent() {
   return fruit::createComponent().bind<Writer, StdoutWriter>().bind<Greeter, GreeterImpl>();
 }
 
-int main() {
-
+int main(int argc, char** argv) {
   Injector<Greeter> injector(getGreeterComponent);
   Greeter* greeter = injector.get<Greeter*>();
 
