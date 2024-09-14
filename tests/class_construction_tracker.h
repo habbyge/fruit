@@ -17,7 +17,8 @@
 #ifndef FRUIT_CLASS_CONSTRUCTION_TRACKER_H
 #define FRUIT_CLASS_CONSTRUCTION_TRACKER_H
 
-#include <cstddef>
+#include <stddef.h>
+#include <stdint.h>
 
 /**
  * This class is useful to keep track of how many instances of a given type are created during the entire program
@@ -35,7 +36,7 @@
  */
 template <typename T>
 struct ConstructionTracker {
-  static std::size_t num_objects_constructed;
+  static size_t num_objects_constructed;
 
   ConstructionTracker() {
     ++num_objects_constructed;
@@ -43,6 +44,6 @@ struct ConstructionTracker {
 };
 
 template <typename T>
-std::size_t ConstructionTracker<T>::num_objects_constructed = 0;
+size_t ConstructionTracker<T>::num_objects_constructed = 0;
 
 #endif // FRUIT_CLASS_CONSTRUCTION_TRACKER_H
